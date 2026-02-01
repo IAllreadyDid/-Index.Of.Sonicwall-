@@ -1,0 +1,101 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://silentdragon.com/download/how%20to%20select%20the%20pcanywhere%20registered%20tcp-ip%20ports.htm
+Subject: How to select the pcAnywhere registered TCP/IP ports
+Date: Sun, 1 Feb 2026 01:21:26 -0600
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0----"
+
+
+------MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0----
+Content-Type: text/html
+Content-ID: <frame-96B5FFD17023511C321007B64E6C74DB@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://silentdragon.com/download/how%20to%20select%20the%20pcanywhere%20registered%20tcp-ip%20ports.htm
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><!-- saved from url=(0065)http://service2.symantec.com/SUPPORT/pca.nsf/pfdocs/1996123152253 --><html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><link rel="stylesheet" type="text/css" href="cid:css-c7dc33a1-fdae-462d-bfa5-8f4ce68d6a83@mhtml.blink" /><link rel="stylesheet" type="text/css" href="cid:css-c59491b2-4a92-42d7-8f97-04e9f4a6cc62@mhtml.blink" /><title>How to select the pcAnywhere registered TCP/IP ports</title><!-- Lotus-Domino (Release 5.0.6a - January 17, 2001 on Windows NT/Intel) -->
+
+
+<link title="style1" href="https://silentdragon.com/download/How%20to%20select%20the%20pcAnywhere%20registered%20TCP-IP%20ports_files/service.css" type="text/css" rel="stylesheet">
+<meta content="MSHTML 5.50.4807.2300" name="GENERATOR"></head>
+<body text="#000000" bgcolor="#ffffff">
+
+<link title="style1" href="https://silentdragon.com/download/How%20to%20select%20the%20pcAnywhere%20registered%20TCP-IP%20ports_files/service.css" type="text/css" rel="stylesheet">
+<p><a href="http://www.symantec.com/"><img height="45" alt="Symantec United States" src="https://silentdragon.com/download/How%20to%20select%20the%20pcAnywhere%20registered%20TCP-IP%20ports_files/us.logo.symantec.gif" width="147" border="0"></a> <br>&nbsp;<br><img height="24" alt="Knowledge Base" src="https://silentdragon.com/download/How%20to%20select%20the%20pcAnywhere%20registered%20TCP-IP%20ports_files/header_kb_kbase.gif" width="154" border="0"><br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="5"><b>How to select the pcAnywhere registered TCP/IP 
+ports</b></font><br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="-1"><b>Situation:</b></font><br>A pcAnywhere host does not appear on the 
+TCP/IP browse list, or it shows a status of "unknown." However, you can ping the 
+host. and those ping times are normal.<br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="-1"><b>Solution:</b></font><br>The pcAnywhere use of IP ports changes with 
+the version of pcAnywhere used. Earlier versions used ports 22 (UDP) and 65301 
+(TCP). These ports were not registered. Beginning with version 7.5, pcAnywhere 
+uses the ports 5631 (TCP) and 5632 (UDP). These ports are registered with the 
+Internet Assigned Numbers Authority (IANA). The following is a brief summary by 
+version:<br><br>pcANYWHERE 2.0 uses ports 22 and 65301. With version 2.03 and 
+higher, a download file can change port usage to 5631 and 
+5632.<br><br>pcANYWHERE32 7.0 uses ports 22 and 65301. A download file can 
+change port usage to 5631 and 5632.<br><br>pcANYWHERE32 7.5 uses ports 5631 and 
+5632. <br><br>pcANYWHERE32 8.0 and pcAnywhere 9.0 use ports 5631 and 5632, but 
+it will fall back to 22 and 65301 if no hosts are found on 5631 or 
+5632.<br><br>pcAnywhere 9.2 and pcAnywhere 10.0 use ports 5631 and 5632 
+only.<br><br><br><b><font size="4">How to make the 
+changes</font></b><br><br><b>pcAnywhere 9.2, pcAnywhere 
+10.0</b><br>Compatibility with ports 22/65301 are removed with this version of 
+pcAnywhere because port 22 is registered with the IANA for the Secure Shell 
+(SSH). While it is possible to configure this version to use ports 22/65301, we 
+recommend that you change the port usage on the older version of pcAnywhere 
+using ports 22/65301.<br><br><b>NOTE:</b> pcAnywhere 10.0 will not connect with 
+pcANYWHERE versions 5.x, or 2.x, regardless of the port 
+assignments.<br><br><b>pcANYWHERE32 7.5</b><br>For information on how to change 
+the ports that pcANYWHERE32 7.5 uses, please see the document <a href="http://service1.symantec.com/SUPPORT/pca.nsf/docid/1999110411575512"><font color="#0000ff">How to change the pcAnywhere IP ports</font></a>.<br><br><b>NOTE: 
+</b>You may not access hosts which are using both the registered and the 
+unregistered ports without making the necessary changes.<br><br><b>pcANYWHERE32 
+7.0</b><br>Download and run the self-extracting <a href="http://www.symantec.com/techsupp/files/pca/pca7-95nt.html"><font color="#0000ff">Ports_70.exe</font></a> file. The accompanying Readme.txt explains 
+how to implement the update for this version of pcANYWHERE. This will change the 
+ports to 5631/5632. <br><br><b>pcANYWHERE 2.0</b><br>Download and run the <a href="http://www.symantec.com/techsupp/files/pca/pca2-win3x95.html"><font color="#0000ff">Ports_20.exe</font></a> file. The accompanying Readme.txt explains 
+how to implement the update for this version of pcANYWHERE. You will also make 
+corrections to the Pcaw.ini file located in the \Windows folder.<br><br><b>To 
+modify the Pcaw.ini file on a Windows 95 computer:</b>
+</p><ul>1. Double-click My Computer.<br>2. Double-click the hard drive icon where 
+  Windows 95 is installed.<br>3. Double-click the folder where Windows 95 
+  resides, usually C:\Windows.<br>4. Double-click the Pcaw.ini file.<br>5. Under 
+  the [pcANYWHERE] heading, add the following 
+  lines:<br><tt>TCPIPDataPort=5631<br>TCPIPStatusPort=5632</tt></ul><br><b>To 
+modify the Pcaw.ini file on a Windows 3.x computer:</b>
+<ul>1. Double-click Main.<br>2. Double-click File Manager.<br>3. Double-click 
+  the directory where Windows resides, usually C:\Windows.<br>4. Double-click 
+  the Pcaw.ini file.<br>5. Under the [pcANYWHERE] heading, add the following 
+  lines:<br><tt>TCPIPDataPort=5631<br>TCPIPStatusPort=5632</tt></ul><br>This 
+changes the ports to 5631/5632.<br><br>
+<hr>
+<br><b><font size="2">Product(s): </font></b><font size="2">pcAnywhere 10.0, 
+pcAnywhere 9.0, pcANYWHERE version 2.0 - Win3.x, pcANYWHERE32 version 7.5 - 
+Win95/NT, pcANYWHERE32 version 8.0 - Win95/NT</font><br><b><font size="2">Operating Systems(s): </font></b><font size="2">Windows 95, Windows 98, 
+Windows NT 4.0, Windows 2000, Windows Me, Windows 3.1, Windows for Workgroups 
+3.11, DOS, Windows NT3.51</font><br><b><font size="2">Document ID:</font></b><font size="2"> </font><font size="2">1996123152253</font><br><b><font size="2">Date 
+Created:</font></b><font size="2"> </font><font size="2">12/03/96</font><br><b><font size="2">Last Modified:</font></b><font size="2"> </font><font size="2">11/20/2001</font> 
+</body></html>
+------MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://silentdragon.com/download/How%20to%20select%20the%20pcAnywhere%20registered%20TCP-IP%20ports_files/service.css
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-c59491b2-4a92-42d7-8f97-04e9f4a6cc62@mhtml.blink
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-c7dc33a1-fdae-462d-bfa5-8f4ce68d6a83@mhtml.blink
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--IM9OhFCUmIUwpVJDiuUpFL3rUVf1n6qXUXOuDVsGL0------

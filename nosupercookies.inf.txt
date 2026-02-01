@@ -1,0 +1,23 @@
+; NoSuperCookies.inf
+;
+; January 18, 2002
+; 
+; Written by Ken Frazier - email: wecoyote@technologist.com
+;
+;
+
+
+[Version]
+Signature = "$CHICAGO$"
+
+[DefaultInstall]
+AddReg=Mod_keys
+
+[Mod_keys]
+; The following is the only way to disable SuperCookies.  For this to protect you,
+; you must keep the Media Player Unique Identifier enabled.
+HKCU,"Software\Microsoft\MediaPlayer\Preferences","SendUserGUID",0x1001,"1"
+HKCU,"Software\Microsoft\Windows Media\WMSDK\General","UniqueID",0,"{00000000-0000-0000-0000-000000000000}"
+HKCU,"Software\Microsoft\MediaPlayer\Player\Settings","Client ID",0,"{00000000-0000-0000-0000-000000000000}"
+HKU,".Default\Software\Microsoft\Windows Media\WMSDK\General","UniqueID",0,"{00000000-0000-0000-0000-000000000000}"
+HKU,".Default\Software\Microsoft\MediaPlayer\Player\Settings","Client ID",0,"{00000000-0000-0000-0000-000000000000}"

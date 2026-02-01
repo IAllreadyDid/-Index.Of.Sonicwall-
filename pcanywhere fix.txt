@@ -1,0 +1,25 @@
+pcAnywhere patches
+
+Here's the drill.
+Close down pcAnywhere.
+Have this message open, but reduce the box size so that you can still see the task bar.
+ 
+ONE at a time:
+Highlight the first line below.
+Press CTRL-C to copy it into the scratch pad.
+Go to Start, Run and press CTRL-V to patch it into the Open line.
+Click on GO to run it.
+You'll get a brief dialog box that says the program is registered.
+ 
+Repeat for the other two.
+ 
+That's it. 
+Bring up pcAnywhere and retest the File Transfer function.
+ 
+Rich
+ 
+ 
+
+regsvr32 "c:\program files\symantec\pcanywhere\awxferui.dll"
+regsvr32 "c:\program files\symantec\pcanywhere\awxfer.dll"
+regsvr32 "c:\program files\symantec\pcanywhere\ftstatus.dll"

@@ -1,0 +1,142 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://silentdragon.com/download/how%20to%20change%20the%20pcanywhere%20ip%20ports.htm
+Subject: How to change the pcAnywhere IP ports
+Date: Sun, 1 Feb 2026 01:21:29 -0600
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s----"
+
+
+------MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s----
+Content-Type: text/html
+Content-ID: <frame-C3B996EF589FB3EEE17530CB3579347E@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://silentdragon.com/download/how%20to%20change%20the%20pcanywhere%20ip%20ports.htm
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><!-- saved from url=(0068)http://service2.symantec.com/SUPPORT/pca.nsf/pfdocs/1999110411575512 --><html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><link rel="stylesheet" type="text/css" href="cid:css-1c59879f-c662-4c45-969b-3ea2d5a5e96f@mhtml.blink" /><link rel="stylesheet" type="text/css" href="cid:css-7b612ee5-aebf-4281-9851-30cd700a5887@mhtml.blink" /><title>How to change the pcAnywhere IP ports</title><!-- Lotus-Domino (Release 5.0.6a - January 17, 2001 on Windows NT/Intel) -->
+
+
+<link title="style1" href="https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/service.css" type="text/css" rel="stylesheet">
+<meta content="MSHTML 5.50.4807.2300" name="GENERATOR"></head>
+<body text="#000000" bgcolor="#ffffff">
+
+<link title="style1" href="https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/service.css" type="text/css" rel="stylesheet">
+<p><a href="http://www.symantec.com/"><img height="45" alt="Symantec United States" src="https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/us.logo.symantec.gif" width="147" border="0"></a> <br>&nbsp;<br><img height="24" alt="Knowledge Base" src="https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/header_kb_kbase.gif" width="154" border="0"><br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="5"><b>How to change the pcAnywhere IP ports</b></font><br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="-1"><b>Situation:</b></font><br>Some firewalls only allow a single 
+pcAnywhere host to use an IP port. Additional pcAnywhere hosts behind that 
+firewall must use different ports. You want to know how to change these 
+ports.<br><br><font face="ARIAL,MS SANS SERIF,UNIVERS,HELVETICA" size="-1"><b>Solution:</b></font><br>Changing pcAnywhere IP ports involves editing 
+the Windows registry. If you need to do this frequently, creating .reg files is 
+the safest and most convenient way to make the change. This is particularly 
+handy for remotes that may have to connect to more than one host behind the 
+firewall.<br><br><b>To create the .reg file:</b>
+</p><ul>1. Click Start, and then click Run.<br>2. Type <tt>regedit</tt> in the 
+  Open window, and then click OK.<br>3. Locate and select the following 
+  key:<br><tt>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\pcAnywhere\CurrentVersion\System<br></tt><br>4. 
+  Click Registry and then click Export Registry File. The Export Registry File 
+  window appears.<br>5. Enter a file name (this could be a name such as 5631.reg 
+  for the standard port numbers, or any significant name), and save the file to 
+  the desktop.<br>6. Close the registry and navigate to the newly created .reg 
+  file.<br>7. Right-click the file and click Edit (left-click will import the 
+  file back to the registry).<br>8. Delete all but the following 
+  lines:<br><br><tt>&nbsp;REGEDIT4<br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\pcAnywhere\CurrentVersion\System]<br>"TCPIPDataPort"=dword:000015ff<br>"TCPIPStatusPort"=dword:00001600<br></tt><br>9. 
+  Save and close the file.</ul><br>You can use this file both as a template to 
+create .reg files for additional ports and as the .reg file to restore 
+pcAnywhere to its default port values.<br><br><b>To create a .reg file to change 
+pcAnywhere to a different set of ports:</b>
+<ul>1. Copy the default .reg file and rename the new copy.<br>2. Right-click 
+  the new .reg file and click Edit.<br>3. Change the DWORD value for each 
+  port.<br><b>IMPORTANT: </b>These values are in hexadecimal. You must replace 
+  them with the hexadecimal values of the new port numbers. For assistance with 
+  determining the hexadecimal values, please see the section <b>How to determine 
+  hexadecimal</b> values below.<br>4. Save and close the file.</ul><br>Repeat this 
+process for as many hosts or remotes as 
+required.<br><br><br><b>Example</b><br><br>The default pcAnywhere port numbers 
+are 5631 (DataPort or TCP) and 5632 (StatusPort or UDP).<br>The hexadecimal 
+values of these ports are 15FF and 1600, respectively.<br><br>You create a new 
+.reg file to change the pcAnywhere ports to 5641 (TCP) and 5642 (UDP).<br>The 
+hexadecimal values of these ports are 1609 and 160A, respectively.<br>The 
+contents of a .reg file with these values will look like 
+this:<br><br><tt>REGEDIT4<br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\pcAnywhere\CurrentVersion\System]<br>"TCPIPDataPort"=dword:00001609<br>"TCPIPStatusPort"=dword:0000160a</tt><br><br>To 
+change the port values of pcAnywhere, double-click this file. This imports the 
+new values into the registry.<br><br><br><b>Port Matching</b><br><br>A 
+pcAnywhere remote does not necessarily have to be set for the same IP port as 
+the host. However, some firewalls may be configured so that the pcAnywhere 
+remote must respond on the same port as the host, otherwise, they will not 
+connect. In this type of situation, the remotes must match the ports for the 
+hosts.<br><br><br><b>Restricting pcAnywhere Ports</b><br><br>You can force a 
+pcAnywhere host or remote to use only the registered ports. To do this requires 
+a registry change.<br>
+<ul>1. Click Start, and then click Run. The Run window appears.<br>2. Type<tt> 
+  </tt><tt>regedit </tt>in the Open box and then click OK. The registry editor 
+  opens.<br>3. Locate and select the following 
+  key:<br><tt>HKEY_LOCAL_MACHINE\Software\Symantec\pcAnywhere\CurrentVersion\System</tt><br><br>4. 
+  Click Edit, point to New, and then click DWORD value. A new DWORD value 
+  appears in the right frame.<br>5. Give this value the name<tt> 
+  TCPIPPortCompatibility </tt>and press Enter.</ul><br>The default data value of 
+this entry is "1". The value "0" is automatically assigned when you create the 
+new DWORD entry. This is the correct value to limit pcAnywhere to the registered 
+ports.<br><br><br><b>A Scenario</b><br><br>You are a remote user and you have 
+three hosts behind a WinRoute firewall that you need to connect to. Each of 
+those hosts operates on a different set of ports. In this example, the hosts are 
+StationA, StationB, and StationC.<br>
+<ul>
+  <ul>StationA (using ports 5631/5632)<br>StationB (using ports 
+    5641/5642)<br>StationC (using ports 5651/5652)</ul></ul><br>To connect to these 
+hosts, you need to create three .reg files - one for each set of ports. In this 
+example, these files are StationA.reg, StationB.reg, and StationC.reg.<br><br>To 
+connect to StationA, double-click the StationA.reg file. If you do this on a 
+Windows 98 computer, you will be prompted with the following dialog 
+box:<br><br><img height="119" src="https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/0.gif" width="482"><br><br>Click 
+yes. <br><br><b>NOTE:</b> Windows 95 and Windows NT 4.0 do not prompt you. They 
+import the registry file immediately.<br><br>When your data is entered into the 
+registry, you see the following:<br><br><img height="119" src="c:\Mail\How to change the pcAnywhere IP ports_files\0(1).gif" width="477"><br><br>pcAnywhere on the remote will now connect to any host 
+operating on the ports 5631/5632.<br><br>When you need to connect to your host 
+on StationB, you will have to double-click the StationB.reg file to change your 
+remote to connect to any host operating on the ports 5641/5642. The same applies 
+to connecting to StationC.<br><br><b>REMEMBER:</b> Ports 5631/5632 are the 
+standard pcAnywhere IP ports. Always keep a .reg file to restore you to those 
+ports.<br><br><b>How to determine hexadecimal values</b><br>Hexadecimal is a 16 
+based counting system. In the decimal system, we count from 0 (zero) to 9, in 
+the hexadecimal system, we count from 0 (zero) to F. (0, 1, 2, 3, 4, 5, 6, 7, 8, 
+9, A, B, C, D, E, F).<br><br><b>To convert a decimal value to hexadecimal:</b>
+<ul>1. Click Start, point to Programs, point to Accessories, and then click 
+  Calculator.<br>2. Click View, and then click Scientific.<br>3. Click the 
+  Decimal radio button.<br>4. Type the decimal value of the port you want to 
+  use. For example, 5631.<br>5. Click the Hexadecimal radio button. The value is 
+  converted. In this case, 5631 is converted to 15FF h. (The "h" indicates that 
+  the value is in hexadecimal format, though this is not needed in the 
+  registry).<br>6. Close the Calculator.</ul><br>
+<hr>
+<br><b><font size="2">Product(s): </font></b><font size="2">pcAnywhere 9.0, 
+pcANYWHERE32 version 7.5 - Win95/NT, pcANYWHERE32 version 8.0 - 
+Win95/NT</font><br><b><font size="2">Operating Systems(s): </font></b><font size="2">Windows 95, Windows 98, Windows NT 4.0, Windows 2000, Windows Me, Windows 
+NT3.51</font><br><b><font size="2">Document ID:</font></b><font size="2"> 
+</font><font size="2">1999110411575512</font><br><b><font size="2">Date 
+Created:</font></b><font size="2"> </font><font size="2">08/08/2000</font><br><b><font size="2">Last Modified:</font></b><font size="2"> </font><font size="2">11/20/2001</font> 
+</body></html>
+------MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://silentdragon.com/download/How%20to%20change%20the%20pcAnywhere%20IP%20ports_files/service.css
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-7b612ee5-aebf-4281-9851-30cd700a5887@mhtml.blink
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-1c59879f-c662-4c45-969b-3ea2d5a5e96f@mhtml.blink
+
+@charset "windows-1252";
+
+
+------MultipartBoundary--5Zm2j2dNuQVHLo71KtznfCk03HUlZGZb1xWI3FEO8s------

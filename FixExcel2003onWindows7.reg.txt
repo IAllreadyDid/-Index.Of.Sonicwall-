@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Excel\Addins\BtOfficeAddin.BtOfficeIntegration.1]
+"LoadBehavior"=dword:00000000
+"FriendlyName"="Send to Bluetooth"

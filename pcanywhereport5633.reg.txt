@@ -1,0 +1,6 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\pcAnywhere\CurrentVersion\System]
+"TCPIPDataPort"=dword:00001601
+"TCPIPStatusPort"=dword:00001602
+
