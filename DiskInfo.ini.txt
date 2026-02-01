@@ -1,0 +1,19 @@
+[Setting]
+DebugMode=0
+AutoRefresh=10
+StartupWaitTime=30
+Temperature=0
+ResidentMinimize=0
+Theme=default
+Language=English
+Height=875
+[USB]
+SAT=1
+IODATA=1
+Sunplus=1
+Logitec=1
+JMicron=1
+Cypress=1
+[PowerOnUnit]
+INTEL SSDSA2CW300G3CVPR130400U7300EGN=1
+ST32000641AS9WM1XT7K=1
